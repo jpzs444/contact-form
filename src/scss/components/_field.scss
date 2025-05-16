@@ -1,0 +1,43 @@
+@use '../utils/' as u;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  row-gap: u.rem(10);
+
+  &__string-input {
+    font-family: 'Karla', Arial, Helvetica, sans-serif;
+    font-size: u.rem(16);
+    padding: u.rem(8) u.rem(16);
+    outline-color: var(--color-grey-medium);    
+  }
+
+  &__error {
+    // display: none;
+    font-size: u.rem(16);
+    margin: u.rem(0);
+    color: var(--color-red);
+  }
+}
+
+.query-field {
+  margin: u.rem(0);
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: u.rem(10);
+}
+
+.consent-field {
+  display: flex;
+  column-gap: u.rem(16);
+  align-items: center;
+  padding-right: u.rem(28);
+}
+
+.asterisk {
+  color: var(--color-green-medium);
+  margin-left: u.rem(3);
+}

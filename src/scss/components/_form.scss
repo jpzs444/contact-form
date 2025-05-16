@@ -1,0 +1,27 @@
+@use '../utils/' as u;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: u.rem(24);
+  margin: u.rem(24) u.rem(14);
+  padding: u.rem(18);
+  background-color: var(--color-white);
+  border-radius: u.rem(16);
+
+  &__title {
+    margin-bottom: u.rem(4);
+  }
+
+  &__submit {
+    font-family: 'Karla', Arial, Helvetica, sans-serif;
+    font-size: u.rem(16);
+    padding: u.rem(12) u.rem(16);
+  }
+
+  .name-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: u.rem(24);
+  }
+}
