@@ -1,6 +1,6 @@
 function App() {
   return(
-    <div>
+    <div className="form-wrapper">
       <form className="form" action="">
         <h1 className="form__title">Contact Us</h1>
         {/* For name */}
@@ -41,7 +41,7 @@ function App() {
         {/* For message */}
         <div className="field">
           <label htmlFor="message">Message <span className="asterisk">*</span></label>
-          <textarea rows={10} className="field__string-input" name="message" id="message" required aria-required="true" aria-describedby="message-error" aria-invalid="true"></textarea>
+          <textarea rows={8} className="field__string-input" name="message" id="message" required aria-required="true" aria-describedby="message-error" aria-invalid="true"></textarea>
           <p className="field__error" id="message-error" role="alert">This field is required</p>
         </div>
         
