@@ -6,10 +6,7 @@
   row-gap: u.rem(10);
 
   &__string-input {
-    font-family: 'Karla', Arial, Helvetica, sans-serif;
-    font-size: u.rem(16);
-    padding: u.rem(8) u.rem(16);
-    outline-color: var(--color-grey-medium);    
+    @include u.field-input;
   }
 
   &__error {
@@ -30,14 +27,60 @@
   row-gap: u.rem(10);
 }
 
+.radio-option__label {
+  display: flex;
+  align-items: center;
+  column-gap: u.rem(10);
+  @include u.field-input;
+  padding: u.rem(8) u.rem(24);
+
+  input[type="radio"] {
+    margin: auto 0;
+
+    &:checked {
+      accent-color: var(--color-green-medium);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    border-color: inherit;
+  }
+
+  &:has(input[type="radio"]:checked) {
+    border-color: var(--color-green-medium);
+    background-color: var(--color-green-lighter);
+  }
+}
+
+textarea {
+  resize: none;
+}
+
 .consent-field {
   display: flex;
   column-gap: u.rem(16);
   align-items: center;
   padding-right: u.rem(28);
+
+  input[type="checkbox"]:checked {
+    accent-color: var(--color-green-medium);
+  }
 }
 
 .asterisk {
   color: var(--color-green-medium);
   margin-left: u.rem(3);
+}
+
+input[type="submit"] {
+  background-color: var(--color-green-medium);
+  border: u.rem(1) solid var(--color-green-medium);
+  border-radius: u.rem(8);
+  color: var(--color-white);
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--color-grey-darker);
+  }
 }

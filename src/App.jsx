@@ -28,14 +28,12 @@ function App() {
         <div className="field">
           <p className="query-field">Query Type <span className="asterisk">*</span></p>
           <div className="radio-group">
-            <div className="radio-group__option">
-              <input type="radio" name="query_type" id="general_enquiry" value="general_enquiry" required aria-required="true" aria-describedby="query_type-error" aria-invalid="true"/>
-              <label htmlFor="general_enquiry">General Enquiry</label>
-            </div>
-            <div className="radio-group__option">
-              <input type="radio" name="query_type" id="support_request" value="support_request"/>
-              <label htmlFor="support_request">Support Request</label>
-            </div>
+            <label htmlFor="general_enquiry" className="radio-option__label">
+              <input type="radio" name="query_type" id="general_enquiry" value="general_enquiry" required aria-required="true" aria-describedby="query_type-error" aria-invalid="true"/>General Enquiry
+            </label>
+            <label htmlFor="support_request" className="radio-option__label">
+              <input type="radio" name="query_type" id="support_request" value="support_request"/>Support Request
+            </label>
           </div>
           <p className="field__error" id="query_type-error" role="alert">Please select a query type</p>
         </div>
@@ -43,7 +41,7 @@ function App() {
         {/* For message */}
         <div className="field">
           <label htmlFor="message">Message <span className="asterisk">*</span></label>
-          <textarea rows={5} className="field__string-input" name="message" id="message" required aria-required="true" aria-describedby="message-error" aria-invalid="true"></textarea>
+          <textarea rows={10} className="field__string-input" name="message" id="message" required aria-required="true" aria-describedby="message-error" aria-invalid="true"></textarea>
           <p className="field__error" id="message-error" role="alert">This field is required</p>
         </div>
         

@@ -1,19 +1,19 @@
-/* karla-regular - latin */
+/* karla-latin-400-normal */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Karla';
   font-style: normal;
+  font-display: swap;
   font-weight: 400;
-  src: url('../fonts/karla-v31-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/karla@latest/latin-400-normal.woff2) format('woff2');
 }
 
-/* karla-700 - latin */
+/* karla-latin-700-normal */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Karla';
   font-style: normal;
+  font-display: swap;
   font-weight: 700;
-  src: url('../fonts/karla-v31-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/karla@latest/latin-700-normal.woff2) format('woff2');
 }
 
 h1,

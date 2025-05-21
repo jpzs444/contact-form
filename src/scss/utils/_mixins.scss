@@ -16,3 +16,17 @@ $breakpoints: (
     @content;
   }
 }
+
+@mixin field-input {
+    font-family: 'Karla', Arial, Helvetica, sans-serif;
+    font-size: f.rem(16);
+    padding: f.rem(8) f.rem(16);
+    border: f.rem(1) solid var(--color-grey-darker);    
+    border-radius: f.rem(8);
+
+    &:focus,
+    &:hover {
+      outline: none;
+      border-color: var(--color-green-medium);
+    }
+}
