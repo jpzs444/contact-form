@@ -1,33 +1,37 @@
-@use 'functions' as f;
+@use "functions" as f;
+@use "sass:map";
 
 $breakpoints: (
-  'small': f.em(576),
-  'medium': f.em(768),
-  'large': f.em(1200),
+  "small": f.em(576),
+  "medium": f.em(768),
+  "large": f.em(1200),
 );
 
 @mixin breakpoint($size) {
-  @media (width >= map-get($breakpoints, $size)) {
+  @media (width >= map.get($breakpoints, $size)) {
     @content;
   }
 }
 
 @mixin breakpoint-down($size) {
-  @media (width < map-get($breakpoints, $size)) {
+  @media (width < map.get($breakpoints, $size)) {
     @content;
   }
 }
 
 @mixin field-input {
-    font-family: 'Karla', Arial, Helvetica, sans-serif;
-    font-size: f.rem(16);
-    padding: f.rem(10) f.rem(16);
-    border: f.rem(1) solid var(--color-grey-darker);    
-    border-radius: f.rem(8);
+  font-family: "Karla", Arial, Helvetica, sans-serif;
+  font-size: f.rem(16);
+  padding: f.rem(10) f.rem(16);
+  border: f.rem(1) solid var(--color-grey-darker);
+  border-radius: f.rem(8);
 
-    &:focus,
-    &:hover {
-      outline: none;
-      border-color: var(--color-green-medium);
-    }
+  // &:focus,
+  &:hover {
+    border-color: var(--color-green-medium);
+  }
+
+  &:focus-visible {
+    outline: f.rem(2) solid var(--color-green-medium);
+  }
 }

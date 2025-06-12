@@ -1,4 +1,4 @@
-@use '../utils/' as u;
+@use "../utils/" as u;
 
 .field {
   display: flex;
@@ -11,7 +11,7 @@
   }
 
   &__error {
-    display: none;
+    display: block;
     margin: u.rem(0);
     font-size: u.rem(16);
     color: var(--color-red);
@@ -33,8 +33,14 @@
   input[type="radio"] {
     margin: auto 0;
 
-    &:checked {
+    &:checked,
+    &:focus {
       accent-color: var(--color-green-medium);
+    }
+
+    &:focus-visible {
+      outline: u.rem(2) solid var(--color-green-medium);
+      outline-offset: 2px;
     }
   }
 
@@ -52,7 +58,7 @@
 textarea {
   resize: none;
   line-height: 1.5;
-  
+
   @include u.breakpoint(large) {
     height: u.rem(96);
   }
@@ -63,9 +69,17 @@ textarea {
   align-items: center;
   column-gap: u.rem(16);
   padding-right: u.rem(28);
+}
 
-  input[type="checkbox"]:checked {
+input[type="checkbox"] {
+  &:checked,
+  &:focus {
     accent-color: var(--color-green-medium);
+  }
+
+  &:focus-visible {
+    outline: u.rem(2) solid var(--color-green-medium);
+    outline-offset: 2px;
   }
 }
 
@@ -74,7 +88,7 @@ textarea {
   color: var(--color-green-medium);
 }
 
-input[type="submit"] {
+button[type="submit"] {
   background-color: var(--color-green-medium);
   border: u.rem(1) solid var(--color-green-medium);
   border-radius: u.rem(8);
@@ -83,5 +97,14 @@ input[type="submit"] {
   &:hover {
     cursor: pointer;
     background-color: var(--color-grey-darker);
+    border-color: var(--color-grey-darker);
+  }
+
+  &:focus {
+    accent-color: var(--color-green-lighter);
+  }
+
+  &:focus-visible {
+    outline: u.rem(2) solid var(--color-grey-darker);
   }
 }
