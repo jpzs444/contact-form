@@ -3,9 +3,10 @@
 // TODO: change focus color for text fields [DONE: focus-visible]
 // TODO: change focus color for radio buttons and checkbox [DONE: focus: accent-color, focus-visible]
 // TODO: check relevance of noValidate and required attributes [DONE: remove `required` when `noValidate` is present]
-// TODO: implement success toast message for successful submission
+// TODO: implement success toast message for successful submission [DONE]
 
 import { useState } from "react";
+import Toast from "./components/Toast";
 
 function App() {
   const [formData, setFormData] = useState({
@@ -18,6 +19,7 @@ function App() {
   });
 
   const [errors, setErrors] = useState({});
+  const [isToastOpen, setIsToastOpen] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -35,7 +37,10 @@ function App() {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      // alert("Form successfully submitted...");
+      setIsToastOpen((prev) => !prev);
+      setTimeout(() => {
+        setIsToastOpen((prev) => !prev);
+      }, 5000);
     }
   };
 
@@ -79,7 +84,7 @@ function App() {
   };
 
   return (
-    <div className="form-wrapper">
+    <main className="form-wrapper">
       <form className="form" action="" noValidate onSubmit={handleSubmit}>
         <h1 className="form__title">Contact Us</h1>
         {/* For name */}
@@ -262,7 +267,9 @@ function App() {
           Submit
         </button>
       </form>
-    </div>
+
+      {isToastOpen && <Toast />}
+    </main>
   );
 }
 

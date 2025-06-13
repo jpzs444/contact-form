@@ -1,0 +1,58 @@
+@use "../utils/" as u;
+
+// for small screens
+@keyframes toast-slide-in {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+// for medium up screens
+@keyframes toast-slide-in-medium {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.toast {
+  padding: u.rem(22) u.rem(22) u.rem(24);
+  background-color: var(--color-grey-darker);
+  border-radius: u.rem(12);
+
+  position: absolute;
+  bottom: u.rem(20);
+  animation: toast-slide-in 0.4s ease-in;
+
+  @include u.breakpoint(medium) {
+    bottom: auto;
+    top: u.rem(20);
+    animation: toast-slide-in-medium 0.4s ease-in;
+  }
+
+  &__title {
+    font-weight: 700;
+    color: var(--color-white);
+  }
+
+  &__title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: u.rem(10);
+    margin-bottom: u.rem(12);
+  }
+
+  &__description {
+    font-size: u.rem(14);
+    color: var(--color-green-lighter);
+  }
+}
