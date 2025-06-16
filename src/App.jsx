@@ -1,10 +1,3 @@
-// TODO: show error message on required fields [DONE]
-// TODO: show error message for wrong email format [DONE]
-// TODO: change focus color for text fields [DONE: focus-visible]
-// TODO: change focus color for radio buttons and checkbox [DONE: focus: accent-color, focus-visible]
-// TODO: check relevance of noValidate and required attributes [DONE: remove `required` when `noValidate` is present]
-// TODO: implement success toast message for successful submission [DONE]
-
 import { useState } from "react";
 import Toast from "./components/Toast";
 
