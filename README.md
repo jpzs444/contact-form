@@ -37,7 +37,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/jpzs444/contact-form](https://github.com/jpzs444/contact-form)
-- Live Site URL: [https://jpzs444.github.io/contact-form/](https://jpzs444.github.io/contact-form/)
+- Live Site URL: [https://contact-form-jpzs444.vercel.app/](https://contact-form-jpzs444.vercel.app/)
 
 ## My process
 
